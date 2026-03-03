@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: transparent;
+        }
+        .card {
+            height: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 46% 54%;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        h3 { margin: 0; }
+        .meta { color: #555; margin: 0; }
+        .date { color: #777; margin: 0; font-size: 0.95rem; }
+        p { color: #555; line-height: 1.5; }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .tag {
+            font-size: 0.82rem;
+            color: #444;
+            background: #f2f2f2;
+            border-radius: 999px;
+            padding: 6px 10px;
+        }
+
+        @media (max-width: 800px) {
+            .card {
+                grid-template-columns: 1fr;
+                grid-template-rows: 40% 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article class="card">
+        <img src="../assets/placeholders/placeholder2.png" alt="RoboSub mechatronics club work preview">
+        <div class="content">
+            <h3>Mechatronics Club Member</h3>
+            <p class="meta"><strong>RoboSub Team, SDSU</strong></p>
+            <p class="date">Sep 2025 - Present</p>
+            <p>Designed and iterated a scissor-lift deployment mechanism for fluid operation, and fabricated/tested mechanical linkages with cross-functional software integration.</p>
+            <div class="tags">
+                <span class="tag">Mechanism Design</span>
+                <span class="tag">Fabrication</span>
+                <span class="tag">Integration Testing</span>
+            </div>
+        </div>
+    </article>
+</body>
+</html>

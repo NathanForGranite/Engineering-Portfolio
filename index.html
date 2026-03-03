@@ -11,7 +11,9 @@
         <div class="nav-content">
             <div class="logo">Nathan Frekhtman</div>
             <div class="links">
-                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#experiences">Experiences</a>
+                <a href="projects/all-projects.html">Project List</a>
                 <a href="assets/resume.pdf">Resume</a>
                 <a href="mailto:nfrekht@gmail.com">Contact</a>
             </div>
@@ -23,27 +25,105 @@
         <p>Available for full time in 2029</p>
     </section>
 
-    <section id="projects" class="projects">
-        <h2>Selected Projects</h2>
-
-        <div class="project-grid">
-            <a href="projects/project1.html" class="card">
-                <img src="assets/images/project1.jpg">
-                <div class="card-content">
-                    <h3>Aluminum Bike Frame FEA</h3>
-                    <p>Structural analysis and optimization.</p>
-                </div>
-            </a>
-
-            <a href="projects/project2.html" class="card">
-                <img src="assets/images/project2.jpg">
-                <div class="card-content">
-                    <h3>Custom Gearbox Design</h3>
-                    <p>CAD, tolerance stack-up, manufacturing plan.</p>
-                </div>
-            </a>
+    <section id="experiences" class="experiences">
+        <h2>Experiences</h2>
+        <div class="carousel">
+            <button id="prev-experience" class="carousel-btn" aria-label="Previous experience">←</button>
+            <div class="carousel-track">
+                <iframe class="experience-frame active" src="carosel/experience1.html" title="Experience 1"></iframe>
+                <iframe class="experience-frame" src="carosel/experience2.html" title="Experience 2"></iframe>
+                <iframe class="experience-frame" src="carosel/experience3.html" title="Experience 3"></iframe>
+            </div>
+            <button id="next-experience" class="carousel-btn" aria-label="Next experience">→</button>
         </div>
     </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>CAD</h3>
+                <p>Fusion 360, SolidWorks, Onshape.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>Python, Arduino C++, MicroPython.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Embedded & Tools</h3>
+                <p>Arduino IDE, PlatformIO, GitHub.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Hardware</h3>
+                <p>Microcontrollers, servos, stepper motors.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Fabrication</h3>
+                <p>FDM 3D printing, laser cutting, hand tools, drill press, rotary tools.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Other</h3>
+                <p>Engineering documentation, Bill of Materials (BOM).</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const frames = document.querySelectorAll('.experience-frame');
+        const prevButton = document.getElementById('prev-experience');
+        const nextButton = document.getElementById('next-experience');
+        const carouselTrack = document.querySelector('.carousel-track');
+        let currentIndex = 0;
+        let autoRotateTimer;
+
+        function showExperience(index) {
+            const total = frames.length;
+            const leftIndex = (index - 1 + total) % total;
+            const rightIndex = (index + 1) % total;
+
+            frames.forEach((frame, frameIndex) => {
+                frame.classList.remove('left', 'center', 'right', 'hidden');
+
+                if (frameIndex === index) {
+                    frame.classList.add('center');
+                } else if (frameIndex === leftIndex) {
+                    frame.classList.add('left');
+                } else if (frameIndex === rightIndex) {
+                    frame.classList.add('right');
+                } else {
+                    frame.classList.add('hidden');
+                }
+            });
+        }
+
+        function goToPrevious() {
+            currentIndex = (currentIndex - 1 + frames.length) % frames.length;
+            showExperience(currentIndex);
+        }
+
+        function goToNext() {
+            currentIndex = (currentIndex + 1) % frames.length;
+            showExperience(currentIndex);
+        }
+
+        function startAutoRotate() {
+            stopAutoRotate();
+            autoRotateTimer = setInterval(goToNext, 4500);
+        }
+
+        function stopAutoRotate() {
+            clearInterval(autoRotateTimer);
+        }
+
+        prevButton.addEventListener('click', goToPrevious);
+        nextButton.addEventListener('click', goToNext);
+
+        carouselTrack.addEventListener('mouseenter', stopAutoRotate);
+        carouselTrack.addEventListener('mouseleave', startAutoRotate);
+
+        showExperience(currentIndex);
+        startAutoRotate();
+    </script>
 
 </body>
 </html>

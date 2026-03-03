@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: transparent;
+        }
+        .card {
+            height: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 46% 54%;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        h3 { margin: 0; }
+        .meta { color: #555; margin: 0; }
+        .date { color: #777; margin: 0; font-size: 0.95rem; }
+        p { color: #555; line-height: 1.5; }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .tag {
+            font-size: 0.82rem;
+            color: #444;
+            background: #f2f2f2;
+            border-radius: 999px;
+            padding: 6px 10px;
+        }
+
+        @media (max-width: 800px) {
+            .card {
+                grid-template-columns: 1fr;
+                grid-template-rows: 40% 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article class="card">
+        <img src="../assets/placeholders/placeholder3.png" alt="VR flight simulator joystick adapter preview">
+        <div class="content">
+            <h3>VR Flight Simulator Joystick Adapter</h3>
+            <p class="meta"><strong>Personal Project</strong></p>
+            <p class="date">Summer 2024</p>
+            <p>Created a 3-axis gimbal assembly in Fusion 360, iterated rapid PLA prototypes, and integrated magnetic coupling for seamless switching between VR and rigid joystick modes.</p>
+            <div class="tags">
+                <span class="tag">Fusion 360</span>
+                <span class="tag">Rapid Prototyping</span>
+                <span class="tag">Kinematic Design</span>
+            </div>
+        </div>
+    </article>
+</body>
+</html>

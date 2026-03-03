@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: transparent;
+        }
+        .card {
+            height: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 46% 54%;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        h3 { margin: 0; }
+        .meta { color: #555; margin: 0; }
+        .date { color: #777; margin: 0; font-size: 0.95rem; }
+        p { color: #555; line-height: 1.5; }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .tag {
+            font-size: 0.82rem;
+            color: #444;
+            background: #f2f2f2;
+            border-radius: 999px;
+            padding: 6px 10px;
+        }
+
+        @media (max-width: 800px) {
+            .card {
+                grid-template-columns: 1fr;
+                grid-template-rows: 40% 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article class="card">
+        <img src="../assets/placeholders/placeholder1.png" alt="Techstars internship engineering work preview">
+        <div class="content">
+            <h3>Mechanical Engineering Intern</h3>
+            <p class="meta"><strong>Techstars / ZipLaunchpad · San Diego, CA</strong></p>
+            <p class="date">Nov 2025 - Feb 2026</p>
+            <p>Selected for a competitive university-sponsored startup internship and built functional FDM prototypes, BOMs, and structural design iterations across multiple client projects.</p>
+            <div class="tags">
+                <span class="tag">CAD</span>
+                <span class="tag">3D Printing</span>
+                <span class="tag">Bill of Materials</span>
+            </div>
+        </div>
+    </article>
+</body>
+</html>
